@@ -52,8 +52,9 @@ public class WebGraphGenerator {
             mapping.put(score, document);
         }
 
+        SortedSet<Double> scores = mapping.descendingKeySet().subSet(1.0, 0.0);
         int i = 0;
-        for (Double score : mapping.descendingKeySet()) {
+        for (Double score : scores) {
             if (i < 5) {
                 System.out.println(score + " -> " + mapping.get(score));
                 i++;
